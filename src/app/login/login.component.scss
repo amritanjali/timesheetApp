@@ -1,0 +1,25 @@
+.valid{
+    border-bottom: 1px solid #ccc
+}
+.invalid{
+    border-bottom: 1px solid red
+}
+.sucess-msg{
+    color: green
+}
+.error-message{
+    background-color:#d23838;
+    padding: 8px;
+    color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.error-required{
+    color: #d23838
+}
+
+.custom-eye{position: absolute;
+right: 21px;
+/* bottom: 51px; */
+margin-top: -23px}

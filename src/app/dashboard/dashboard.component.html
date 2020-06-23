@@ -1,0 +1,18 @@
+<div class="fixed-top  shadow p-4 mb-4 bg-white" style="z-index: 99">
+        <h3>
+           Welocme {{cureentUser.username}}
+           
+        </h3>
+        <span class="float-right right-side-container">
+            
+            <span class="btn btn-info" (click)="userList()">see all register user</span>&nbsp;&nbsp;
+            <span class="btn btn-info" (click)="timesheetShow()"> Timesheet</span>&nbsp;&nbsp;
+            <img src="../../assets/img/profile.png" class="profile-img" (click)="seeProfile()"/>&nbsp;&nbsp;
+            <span class="text-info" (click)="seeProfile()" *ngIf="displayTimesheet" style="cursor:pointer">{{cureentUser.username}}</span>&nbsp;&nbsp;
+          <img src="../../assets/img/logout.png" class="logout-img" (click)="logoutClick()">
+          <!-- <i class="fas fa-sign-out-alt" aria-hidden="true" ></i> -->
+        </span>
+ </div>
+ <div class="col-xs-12 col-md-12" style="margin-top:110px;">
+<router-outlet></router-outlet>
+</div>

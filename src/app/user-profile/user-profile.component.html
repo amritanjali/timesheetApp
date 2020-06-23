@@ -1,0 +1,38 @@
+<div class="col-xs-12 col-md-12 text-center" *ngIf="updateProfileShow">
+        <!-- <button class="btn btn-primary" (click)="back()">Back</button> -->
+        <img src="../../assets/img/profile.png" class="profile-img2">
+       <h3>Current user name: {{cureentUser.username}}</h3><br>
+       <h3>First Name: {{cureentUser.firstName}}</h3><br>
+       <h3>Last Name: {{cureentUser.lastName}}</h3><br><br>
+       <button class="btn btn-primary" (click)="updateProfile()">Update profile</button>&nbsp;&nbsp;
+       <button class="btn btn-danger" (click)="delete()">Delete Account</button>
+</div>
+
+<div class="col-xs-12 col-md-12" *ngIf="!updateProfileShow">
+        <div class="container">
+            <button class="btn btn-primary" (click)="back()">Back</button>
+            <h2>Update Profile</h2>
+            <form [formGroup]="updateProfileForm"  (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="email">First Name:</label>
+                <input type="email" class="form-control"  value={{cureentUser.firstName}} name="email" formControlName='firstName'>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Last Name:</label>
+                <input type="text" class="form-control"  value={{cureentUser.lastName}} placeholder="Enter Last Name" name="pswd" formControlName='lastName'>
+              </div>
+              <div class="form-group">
+                  <label for="pwd">User Name:</label>
+                  <input type="text" class="form-control"  value={{cureentUser.username}} placeholder="Enter User Name" name="pswd" formControlName='username' (keydown.space)="$event.preventDefault()">
+              </div>
+       
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+</div>
+  
+
+<p-dialog header="delete this account" [(visible)]="deleteAccountdialog" showEffect="fade" appendTo="body" modal="modal" [closable]="true">
+  <p>Are you sure you want to delete <b>{{cureentUser.username}} </b> account?</p>
+  <button class="btn btn-danger" (click)="deletCureentUSer(cureentUser.id, cureentUser.username)">delete</button>
+</p-dialog>
